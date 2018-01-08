@@ -30,8 +30,8 @@ class Notepad:
         try:
             self.__root.wm_iconbitmap(
                 "Notepad.ico")  # GOT TO FIX THIS ERROR (ICON)
-        except:
-            pass
+        except Exception as exp:
+            print("[Notepad] :: Got exception: %s" % exp)
 
         # set window size (the default is 300x300)
         try:
@@ -42,7 +42,7 @@ class Notepad:
         try:
             self.__thisHeight = kwargs['height']
         except KeyError:
-            pass
+            print("[Notepad] :: Got exception")
 
         # set the window text
         self.__root.title("Untitled - Notepad")
